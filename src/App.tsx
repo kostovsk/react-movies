@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// function component
 function App() {
+  // logic for component, functionality
   const [myDate, myDateUpdate] = useState(new Date());
 
   useEffect(() => {
@@ -13,6 +15,7 @@ function App() {
     return () => clearInterval(intervalId);
   });
 
+  // UI of component
   return (
     <div>
         <h3>Example React</h3>
