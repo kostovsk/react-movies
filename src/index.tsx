@@ -5,11 +5,12 @@ import App from './App';
 import Simple from './Simple';
 import Expressions from './Expressions';
 import Conditionals from './Conditionals';
+import Events from './Events';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Conditionals />
+    <Events />
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -21,5 +22,6 @@ reportWebVitals();
 
 //these were in dom render
 //<App />
-    //<Simple />
-    // <Expressions />
+//<Simple />
+// <Expressions />
+// <Conditionals />
