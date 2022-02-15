@@ -6,11 +6,12 @@ import Simple from './Simple';
 import Expressions from './Expressions';
 import Conditionals from './Conditionals';
 import Events from './Events';
+import ConditionalsIf from './ConditionalsIf';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Events />
+    <ConditionalsIf />
   </React.StrictMode>,
   document.getElementById('root')
 );
