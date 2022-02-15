@@ -7,11 +7,12 @@ import Expressions from './Expressions';
 import Conditionals from './Conditionals';
 import Events from './Events';
 import ConditionalsIf from './ConditionalsIf';
+import MapExample from './MapExample';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ConditionalsIf />
+    <MapExample />
   </React.StrictMode>,
   document.getElementById('root')
 );
