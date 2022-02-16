@@ -4,6 +4,7 @@ export default function SelectNumber(props: selectNumberProps){
     return (
         <select onChange={(e) => {
             console.log(e.currentTarget.value);
+            props.onSelected(parseInt(e.currentTarget.value, 10));
         }}>
             {arr.map((_, index) => <option key={index+1} value={index+1}>{index+1}</option>)}
         </select>
@@ -12,4 +13,5 @@ export default function SelectNumber(props: selectNumberProps){
 
 interface selectNumberProps{
     maxValue: number;
+    onSelected(value: number): void;
 }
