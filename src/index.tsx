@@ -14,7 +14,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CSSExamples />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
