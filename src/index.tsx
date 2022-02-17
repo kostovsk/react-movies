@@ -9,11 +9,12 @@ import Events from './Events';
 import ConditionalsIf from './ConditionalsIf';
 import ConditionalsIfSeveralComponents from './ConditionalsIfSeveralComponents';
 import MapExample from './MapExample';
+import CSSExamples from './CSSExamples';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ConditionalsIfSeveralComponents />
+    <CSSExamples />
   </React.StrictMode>,
   document.getElementById('root')
 );
