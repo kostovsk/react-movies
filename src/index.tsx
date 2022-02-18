@@ -2,14 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Simple from './Simple';
-import Expressions from './Expressions';
-import Conditionals from './Conditionals';
-import Events from './Events';
-import ConditionalsIf from './ConditionalsIf';
-import ConditionalsIfSeveralComponents from './ConditionalsIfSeveralComponents';
-import MapExample from './MapExample';
-import CSSExamples from './CSSExamples';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
