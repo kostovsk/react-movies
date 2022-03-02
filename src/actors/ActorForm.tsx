@@ -2,6 +2,7 @@ import { Form, Formik, FormikHelpers } from "formik";
 import { Link } from "react-router-dom";
 import TextField from '../forms/TextField';
 import DateField from '../forms/DateField';
+import ImageField from '../forms/ImageField';
 import Button from '../utils/Button';
 import { actorCreationDTO } from './actors.model';
 import * as Yup from 'yup';
@@ -20,6 +21,8 @@ export default function ActorForm(props: actorFormProps) {
                 <Form>
                     <TextField displayName="Name" field="name" />
                     <DateField displayName="Date of Birth" field="dateOfBirth" />
+                    <ImageField displayName="Picture" field="picture"
+                        imageURL={props.model.pictureURL} />
 
                     <Button disabled={formikProps.isSubmitting}
                         type="submit"
