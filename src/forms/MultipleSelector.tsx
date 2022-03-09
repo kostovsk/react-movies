@@ -52,7 +52,7 @@ interface multipleSelectorProps {
     selected: multipleSelectorModel[];
     nonSelected: multipleSelectorModel[];
     onChange(selected: multipleSelectorModel[],
-        nonSelected: multipleSelectorModel[])
+        nonSelected: multipleSelectorModel[]): void;
 }
 
 export interface multipleSelectorModel {
