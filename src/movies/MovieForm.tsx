@@ -8,6 +8,7 @@ import DateField from '../forms/DateField';
 import ImageField from '../forms/ImageField';
 import CheckboxField from '../forms/CheckboxField';
 import MultipleSelector, { multipleSelectorModel } from '../forms/MultipleSelector';
+import TypeAheadActor from '../forms/TypeAheadActors';
 import { useState } from "react";
 import { genreDTO } from "../genres/genres.model";
 import { movieTheaterDTO } from "../movietheaters/movieTheater.mode";
@@ -69,6 +70,11 @@ export default function MovieForm(props: movieFormProps) {
                             setSelectedMovieTheaters(selected);
                             setNonSelectedMovieTheaters(nonSelected);
                         }}
+                    />
+
+                    <TypeAheadActor
+                        displayName="Actors"
+                        actors={[]}
                     />
 
                     <Button disabled={formikProps.isSubmitting} type="submit">Save Changes</Button>
