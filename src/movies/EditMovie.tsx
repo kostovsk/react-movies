@@ -1,3 +1,4 @@
+import { actorMovieDTO } from '../actors/actors.model';
 import { genreDTO } from '../genres/genres.model';
 import { movieTheaterDTO } from '../movietheaters/movieTheater.mode';
 import MovieForm from './MovieForm';
@@ -12,6 +13,10 @@ export default function EditMovie() {
     const nonSelectedMovieTheaters: movieTheaterDTO[]
         = [{ id: 2, name: 'TEX' }]
 
+    const selectedActors: actorMovieDTO[] = [{
+        id: 1, name: 'Cartman', character: 'Fat Ass', picture: 'https://upload.wikimedia.org/wikipedia/en/7/77/EricCartman.png'
+    }]
+
     return (
         <>
             <h3>Edit Movie</h3>
@@ -25,7 +30,7 @@ export default function EditMovie() {
 
                 nonSelectedMovieTheaters={nonSelectedMovieTheaters}
                 selectedMovieTheaters={selectedMovieTheaters}
-                selectedActors={[]}
+                selectedActors={selectedActors}
 
             />
         </>
