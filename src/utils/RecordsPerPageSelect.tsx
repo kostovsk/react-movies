@@ -1,7 +1,9 @@
 export default function RecordsPerPageSelect(props: recordsPerPageSelectProps) {
     return (
-        <div className="mb-3 style={{width: '150px}}">
-            <label>Records per page:</label>
+        <div className="mb-3" style={{
+            width: '150px'
+        }}>
+            < label > Records per page:</label>
             <select
                 className="form-select"
                 defaultValue={5}
@@ -13,7 +15,7 @@ export default function RecordsPerPageSelect(props: recordsPerPageSelectProps) {
                 <option value={25}>25</option>
                 <option value={50}>50</option>
             </select>
-        </div>
+        </ div>
     )
 }
 
