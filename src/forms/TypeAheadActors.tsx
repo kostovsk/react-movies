@@ -1,22 +1,27 @@
 import { actorMovieDTO } from '../actors/actors.model';
-import { Typeahead } from 'react-bootstrap-typeahead';
+import { AsyncTypeahead, Typeahead } from 'react-bootstrap-typeahead';
 import { ReactElement, useState } from 'react';
+import axios, { AxiosResponse } from 'axios';
+import { urlActors } from '../endpoints';
 
 export default function TypeAheadActors(props: typeAheadActorsProps) {
 
-    const actors: actorMovieDTO[] = [{
-        id: 1, name: 'Cartman', character: '', picture: 'https://upload.wikimedia.org/wikipedia/en/7/77/EricCartman.png'
-    },
-    {
-        id: 2, name: 'Kyle', character: '', picture: 'https://ih1.redbubble.net/image.932284567.9493/flat,750x,075,f-pad,750x1000,f8f8f8.jpg'
-    },
-    {
-        id: 3, name: 'Kenny', character: '', picture: 'https://upload.wikimedia.org/wikipedia/en/6/6f/KennyMcCormick.png'
-    }]
+    const [actors, setActors] = useState<actorMovieDTO[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     const selected: actorMovieDTO[] = [];
 
     const [draggedElement, setDraggedElement] = useState<actorMovieDTO | undefined>(undefined);
+
+    function handleSearch(query: string) {
+        setIsLoading(true);
+
+        axios.get(`${urlActors}/searchByName/${query}`)
+            .then((response: AxiosResponse<actorMovieDTO[]>) => {
+                setActors(response.data);
+                setIsLoading(false);
+            })
+    }
 
     function handleDragStart(actor: actorMovieDTO) {
         setDraggedElement(actor);
@@ -40,10 +45,11 @@ export default function TypeAheadActors(props: typeAheadActorsProps) {
     return (
         <div className='mb-3'>
             <label>{props.displayName}</label>
-            <Typeahead
+            <AsyncTypeahead
                 id="typeahead"
                 onChange={actors => {
                     if (props.actors.findIndex(x => x.id === actors[0].id) === -1) {
+                        actors[0].character = '';
                         props.onAdd([...props.actors, actors[0]]);
                     }
 
@@ -51,7 +57,9 @@ export default function TypeAheadActors(props: typeAheadActorsProps) {
                 }}
                 options={actors}
                 labelKey={actor => actor.name}
-                filterBy={['name']}
+                filterBy={() => true}
+                isLoading={isLoading}
+                onSearch={handleSearch}
                 placeholder="Write the name of the actor..."
                 minLength={1}
                 flip={true}
